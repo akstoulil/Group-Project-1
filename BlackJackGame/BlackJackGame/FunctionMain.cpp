@@ -16,11 +16,12 @@ CardClass *SetupDeck() {
 	for (int counterOne = 0; counterOne < 4; counterOne++) {
 		for (int counterTwo = 0; counterTwo < 13; counterTwo++) {
 			//I've forgotten the proper syntax for this
-			arr[counterOne][counterTwo]:setSuit(counterOne);
-			arr[counterOne][counterTwo]:setNumber(counterTwo);
-			arr[counterOne][counterTwo]:setState(false);
+			arr[counterOne][counterTwo].setSuit(counterOne);
+			arr[counterOne][counterTwo].setNumber(counterTwo);
+			arr[counterOne][counterTwo].setState(false);
 		}
 	}
 
-	return arr; //I don't know why this is erroring
+	return *arr; //I don't know why this is erroring
 }
+
