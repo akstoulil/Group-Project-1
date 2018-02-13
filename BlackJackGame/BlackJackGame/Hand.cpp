@@ -94,7 +94,7 @@ void Hand::DrawTwo(CardClass deck[][])
 			handVec[0] = deck[randomCardX1][randomCardY1];
 		}
 		//card 1 hasn't been previously drawn, but 2 has
-		else if (handVec[1].getState == false && handVec[1].getState == true)
+		else if (handVec[0].getState == false && handVec[1].getState == true)
 		{
 			//get two new random coordinates
 			randomCardX2 = rand() % 4;
