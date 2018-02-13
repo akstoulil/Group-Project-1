@@ -1,0 +1,7 @@
+﻿  BlackJackProject.cpp
+c:\users\spen2\desktop\c++ stuff\blackjackproject\blackjackproject\playerclass.h(77): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Hand.cpp
+  BlackJackProject.vcxproj -> C:\Users\spen2\Desktop\C++ Stuff\BlackJackProject\x64\Debug\BlackJackProject.exe
+  BlackJackProject.vcxproj -> C:\Users\spen2\Desktop\C++ Stuff\BlackJackProject\x64\Debug\BlackJackProject.pdb (Partial PDB)
