@@ -1,4 +1,6 @@
 #pragma once //"#pragma once" does the same thing as "#ifndef <token> #define <token> #endif"
+#include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -11,6 +13,8 @@ private:
 	int cardNumber;
 	int cardSuit;
 	bool hasBeenDrawn;
+	string suitName;
+	string numberName;
 
 public:
 	//Default Constructor
@@ -46,5 +50,30 @@ public:
 	}
 	void setState(bool newDrawState) {
 		hasBeenDrawn = newDrawState;
+	}
+
+	string getSuitName() {
+		return suitName;
+	}
+
+	void setSuitName(string newSuitName) {
+		suitName = newSuitName;
+	}
+
+	string getNumberName() {
+		return numberName;
+	}
+
+	void setNumberName(string newNumberName) {
+		numberName = newNumberName;
+	}
+
+	void displayCardInfo() {
+
+		//static string numberToSuit[4] = { "Hearts", "Diamonds", "Clubs", "Spades" };
+		//static string numberToName[13] = { "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King" };
+
+		cout << "You have drawn the " << getNumberName() << " of " << getSuitName() << endl;
+
 	}
 };

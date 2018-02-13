@@ -84,15 +84,55 @@ public:
 				CardClass card = arr[randomSuit][randomNumber];
 				currentHand.push_back(card);
 
-				counter++;
-
 				card_total += card.getNumber();
-				cout << card.getNumber() << endl;
+
+				card.displayCardInfo();
 
 				arr[randomSuit][randomNumber].setState(true);
 
+				counter++;
+
 			}
 		}
+
+		cout << "Your current total is: " << getCard_total() << endl;
+
+	}
+
+	void addCard(CardClass arr[][13]) {
+
+		bool cardDrawn = false;
+
+		while (cardDrawn == false) {
+
+			srand(time(NULL));
+
+			int randomSuit = rand() % 4;
+			int randomNumber = rand() % 13;
+
+			if (arr[randomSuit][randomNumber].getState() == false) {
+
+				CardClass card = arr[randomSuit][randomNumber];
+				currentHand.push_back(card);
+
+				card_total += card.getNumber();
+				arr[randomSuit][randomNumber].setState(true);
+
+				card.displayCardInfo();
+
+				cardDrawn = true;
+
+			}
+		}
+
+		cout << "Your current total is: " << getCard_total() << endl;
+
+	}
+
+	void clearHand() {
+
+		currentHand.clear();
+		card_total = 0;
 
 	}
 };

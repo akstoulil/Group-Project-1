@@ -11,6 +11,8 @@
 #include "PlayerClass.h"
 using namespace std;
 
+const int numCardsPerSuit = 13;
+const int numSuits = 4;
 
 int main()
 {
@@ -19,12 +21,6 @@ int main()
 	//*DeckObject is a pointer to the game's CardClass Array (i.e. the deck) that's returned from the SetupDeck() function
 	//That's in the FunctionMain.cpp file
 
-	const int numCardsPerSuit = 13;
-	const int numSuits = 4;
-
-	CardClass DeckObject[numSuits][numCardsPerSuit];
-	SetupDeck(DeckObject);
-
 	//Variables to store the player's choice and other information
 	int playerChoice;
 	int maxCardValue = 21;
@@ -32,14 +28,10 @@ int main()
 	bool playerTurn = true;
 	bool aiTurn = true;
 
-	//Program creates a new hand for the player and draws two cards from the deck object
-	PlayerClass user = PlayerClass::PlayerClass();
-
 	//While loop checks to make sure that the user wants to continue playing
 	while (gameContinue == true) {
 
 		int chipsToBet;
-		user.initializeHand(DeckObject);
 
 		//Program prompts the user to enter the amount of chips they wish to bet
 		cout << "Please enter the amount of chips you wish to bet: ";
@@ -53,6 +45,13 @@ int main()
 			cin >> chipsToBet;
 
 		}
+
+		CardClass DeckObject[numSuits][numCardsPerSuit];
+		SetupDeck(DeckObject);
+
+		//Program creates a new hand for the player and draws two cards from the deck object
+		PlayerClass user = PlayerClass::PlayerClass();
+		user.initializeHand(DeckObject);
 
 		while (playerTurn == true && user.getCard_total() <= maxCardValue) {
 
@@ -69,7 +68,8 @@ int main()
 			if (playerChoice == 1) {
 
 				//Program calls the method to add a card to the player hand
-				//playerHand.addCard();
+				user.addCard(DeckObject);
+				cout << "\n";
 
 			}
 			else if (playerChoice == 2) {
@@ -83,6 +83,8 @@ int main()
 
 				//Program calls the method to double down
 				//playerHand.doubleDown();
+				chipsToBet *= 2;
+				user.addCard(DeckObject);
 				playerTurn = false;
 
 			}
@@ -127,7 +129,8 @@ int main()
 
 			gameContinue = true;
 			playerTurn = true;
-
+			user.clearHand();
+			
 		}
 	}
 
