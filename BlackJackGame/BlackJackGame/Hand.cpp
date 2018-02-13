@@ -80,6 +80,7 @@ void Hand::DrawTwo(CardClass deck[][])
 		//if both cards are not picked, set their set state to true, and exit loop
 		if (handVec[0].getState == false && handVec[1].getState == false)
 		{
+			deck[randomCardX1][randomCardY1].setState(true);
 			deck[randomCardX2][randomCardY2].setState(true);
 			exit = 1;
 		}
