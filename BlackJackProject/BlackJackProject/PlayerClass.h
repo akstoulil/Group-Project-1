@@ -82,6 +82,21 @@ public:
 			if (arr[randomSuit][randomNumber].getState() == false) {
 
 				CardClass card = arr[randomSuit][randomNumber];
+
+				if (card.getNumber() == 1) {
+
+					char cardInput;
+					cout << "Do you want to count the Ace as either 1 or 11? Enter y for 11, enter n for no: ";
+					cin >> cardInput;
+
+					if (cardInput == 'y') {
+
+						card.setNumber(11);
+
+					}
+
+				}
+
 				currentHand.push_back(card);
 
 				card_total += card.getNumber();
@@ -113,6 +128,21 @@ public:
 			if (arr[randomSuit][randomNumber].getState() == false) {
 
 				CardClass card = arr[randomSuit][randomNumber];
+
+				if (card.getNumber() == 1) {
+
+					char cardInput;
+					cout << "Do you want to count the Ace as either 1 or 11? Enter y for 11, enter n for no: ";
+					cin >> cardInput;
+
+					if (cardInput == 'y') {
+
+						card.setNumber(11);
+
+					}
+
+				}
+
 				currentHand.push_back(card);
 
 				card_total += card.getNumber();
