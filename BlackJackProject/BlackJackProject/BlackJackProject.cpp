@@ -53,7 +53,7 @@ int main()
 		PlayerClass user = PlayerClass::PlayerClass();
 		user.initializeHand(DeckObject);
 
-		while (playerTurn == true && user.getCard_total() <= maxCardValue) {
+		while (playerTurn == true && user.getCard_total() <= maxCardValue && user.getCheckSplit() == false) {
 
 			//Program displays the available options to choose from
 			cout << "--------------------------------------------------" << endl;
@@ -109,6 +109,107 @@ int main()
 			}
 		}
 
+		/*
+			This section of code controls the player logic for if the player has chosen to
+			split their deck.
+		*/
+		if (user.getCheckSplit() == true) {
+
+			int bet2 = chipsToBet;
+
+			if (user.getSplitHandTotal1() <= maxCardValue || user.getSplitHandTotal2() <= maxCardValue) {
+
+				//Program displays the available options to choose from
+				cout << "--------------------------------------------------" << endl;
+				cout << "Please choose what action you would like to take: " << endl;
+				cout << "Enter 1 to Hit" << endl;
+				cout << "Enter 2 to Stand" << endl;
+				cout << "Enter 3 to Double Down" << endl;
+				cout << "Enter 4 to Surrender" << endl;
+				cin >> playerChoice;
+
+				//If statements to determine what choice the player has made
+				if (playerChoice == 1) {
+
+					int choice;
+					cout << "Enter 1 to add a card to hand 1, or enter two to add a card to hand 2: ";
+					cin >> choice;
+
+					if (choice == 1 && user.getSplitHandTotal1() <= maxCardValue) {
+
+						user.addToSplit(DeckObject, choice);
+
+					}
+					else if (choice == 2 && user.getSplitHandTotal2() <= maxCardValue) {
+
+						user.addToSplit(DeckObject, choice);
+
+					}
+					else {
+
+						cout << "Error, that is not a valid hand" << endl;
+
+					}
+
+				}
+				else if (playerChoice == 2) {
+
+					//Program displays that you have ended your turn
+					cout << "You have ended your turn" << endl;
+					playerTurn = false;
+
+				}
+				else if (playerChoice == 3) {
+
+					//Program calls the method to double down
+					int choice;
+					cout << "Enter 1 to add a card to hand 1, or enter two to add a card to hand 2: ";
+					cin >> choice;
+
+					if (choice == 1 && user.getSplitHandTotal1() <= maxCardValue) {
+
+						user.addToSplit(DeckObject, choice);
+						chipsToBet *= 2;
+						playerTurn = false;
+
+					}
+					else if (choice == 2 && user.getSplitHandTotal2() <= maxCardValue) {
+
+						user.addToSplit(DeckObject, choice);
+						bet2 *= 2;
+						playerTurn = false;
+
+					}
+					else {
+
+						cout << "Error, that is not a valid hand" << endl;
+
+					}
+
+				}
+				else if (playerChoice == 4) {
+
+					//Program ends the game
+					gameContinue = false;
+					playerTurn = false;
+
+				}
+				else {
+
+					//While loop checks to see if the player has entered the correct input
+					while (playerChoice != 1 || playerChoice != 2 || playerChoice != 3 || playerChoice != 4) {
+
+						//Program displays an error message and prompts the user to enter a new input option
+						cout << "Error, the choice entered was not on the available list. Please enter a new choice: ";
+						cin >> playerChoice;
+
+					}
+
+				}
+
+			}
+
+		}
 		/*
 		Ai Does it's logic here and figures out a winner for the round
 		*/

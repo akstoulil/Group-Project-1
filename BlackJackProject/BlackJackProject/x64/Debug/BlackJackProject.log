@@ -1,7 +1,11 @@
-﻿  FunctionMain.cpp
-  BlackJackProject.cpp
-c:\users\spen2\documents\github\group-project-1\blackjackproject\blackjackproject\playerclass.h(77): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\spen2\documents\github\group-project-1\blackjackproject\blackjackproject\playerclass.h(108): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  BlackJackProject.cpp
+c:\users\spen2\documents\github\group-project-1\blackjackproject\blackjackproject\playerclass.h(104): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\spen2\documents\github\group-project-1\blackjackproject\blackjackproject\playerclass.h(161): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\spen2\documents\github\group-project-1\blackjackproject\blackjackproject\playerclass.h(212): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\spen2\documents\github\group-project-1\blackjackproject\blackjackproject\playerclass.h(257): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Generating Code...
+  Skipping... (no relevant changes detected)
+  Hand.cpp
+  FunctionMain.cpp
   BlackJackProject.vcxproj -> C:\Users\spen2\Documents\GitHub\Group-Project-1\BlackJackProject\x64\Debug\BlackJackProject.exe
   BlackJackProject.vcxproj -> C:\Users\spen2\Documents\GitHub\Group-Project-1\BlackJackProject\x64\Debug\BlackJackProject.pdb (Partial PDB)
