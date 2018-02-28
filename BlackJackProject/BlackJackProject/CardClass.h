@@ -70,9 +70,7 @@ public:
 
 	void displayCardInfo() {
 
-		//static string numberToSuit[4] = { "Hearts", "Diamonds", "Clubs", "Spades" };
-		//static string numberToName[13] = { "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King" };
-
+		//Program displays the card information
 		cout << "You have drawn the " << getNumberName() << " of " << getSuitName() << endl;
 
 	}

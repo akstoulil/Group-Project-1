@@ -9,6 +9,7 @@ using namespace std;
 
 inline void SetupDeck(CardClass arr[][13]) {
 
+	//String arrays for suit names and numbers
 	static string numberToSuit[4] = { "Hearts", "Diamonds", "Clubs", "Spades" };
 	static string numberToName[13] = { "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King" };
 
@@ -43,14 +44,7 @@ inline void SetupDeck(CardClass arr[][13]) {
 
 			}
 
-			/*
-			arr[counterOne][counterTwo].setSuit(counterOne);
-			arr[counterOne][counterTwo].setNumber(counterTwo);
-			arr[counterOne][counterTwo].setState(false);
-			*/
-
 		}
 	}
 
-	//return arr; //I don't know why this is erroring
 }
