@@ -8,13 +8,10 @@
 class PlayerClass
 {
 protected:
-	int chipsToBet;
 	int card_total;
 	int splitHandTotal1;
 	int splitHandTotal2;
-	bool playerChoice;
 	bool checkSplit;
-	int chipsToPlay;
 	vector<CardClass> currentHand;
 	vector<vector<CardClass>> splitHands;
 
@@ -22,9 +19,7 @@ public:
 
 	PlayerClass() {
 
-		chipsToBet = 0;
 		card_total = 0;
-		chipsToPlay = 0;
 		checkSplit = false;
 		vector<CardClass> sHand1;
 		vector<CardClass> sHand2;
@@ -33,48 +28,14 @@ public:
 
 	}
 
-	PlayerClass(int chipsToBet, int card_total, bool playerChoice, int chipsToPlay)
-	{
-		chipsToBet = 0;
-		card_total = 0;
-		playerChoice = false;
-		chipsToPlay = 0;
-	}
-
-	int setchipsToBet(int b)
-	{
-		chipsToBet = b;
-	}
 	int setCard_total(int t)
 	{
 		card_total = t;
-	}
-	bool setPlayerChoice(bool p)
-	{
-		playerChoice = p;
-	}
-	int setchipsToPlay(int ctp)
-	{
-		chipsToBet = ctp;
-	}
-
-	int getchipsToBet() const
-	{
-		return chipsToBet;
 	}
 
 	int getCard_total() const
 	{
 		return card_total;
-	}
-
-	bool getPlayerChoice() const
-	{
-		return playerChoice;
-	}
-	int getchipsToPlay() const
-	{
-		return chipsToPlay;
 	}
 
 	int getSplitHandTotal1() {

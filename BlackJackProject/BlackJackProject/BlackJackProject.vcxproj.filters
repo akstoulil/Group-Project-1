@@ -24,9 +24,6 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Hand.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -42,9 +39,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FunctionMain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Hand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

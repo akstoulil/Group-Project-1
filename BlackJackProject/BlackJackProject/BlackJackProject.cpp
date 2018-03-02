@@ -6,8 +6,6 @@
 #include "CardClass.h"
 #include <iostream>
 #include <vector>
-#include "Hand.h"
-#include "Hand.cpp"
 #include "PlayerClass.h"
 using namespace std;
 
@@ -63,6 +61,16 @@ int main()
 
 		cout << "--------------------------------------------------" << endl;
 
+		//If the user total is equal to the dealer's total
+		if (user.getCard_total() == 21 && dealer.getCard_total() == 21) {
+
+			//Display that it is a tie
+			cout << "Tie game! Both the player and dealer have Blackjack!" << endl;
+			playerTurn = false;
+			aiTurn = false;
+
+		}
+
 		//If the user has 21, and the dealer total is less than 21
 		if (user.getCard_total() == 21 && dealer.getCard_total() < user.getCard_total()) {
 
@@ -78,16 +86,6 @@ int main()
 
 			//Program displays that the dealer has won
 			cout << "The dealer has a Blackjack! You lost." << endl;
-			playerTurn = false;
-			aiTurn = false;
-
-		}
-
-		//If the user total is equal to the dealer's total
-		if (user.getCard_total() == 21 && dealer.getCard_total() == 21) {
-
-			//Display that it is a tie
-			cout << "Tie game! Both the player and dealer have Blackjack!" << endl;
 			playerTurn = false;
 			aiTurn = false;
 
