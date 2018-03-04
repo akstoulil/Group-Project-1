@@ -194,11 +194,23 @@ int main()
 							//Program adds the card to the deck
 							user.addToSplit(DeckObject, choice);
 
+							if (user.getSplitHandTotal1() > maxCardValue && user.getSplitHandTotal2() > maxCardValue) {
+
+								playerTurn = false;
+
+							}
+
 						}
 						else if (choice == 2 && user.getSplitHandTotal2() < maxCardValue) {
 
 							//Program adds the card to the deck
 							user.addToSplit(DeckObject, choice);
+
+							if (user.getSplitHandTotal1() > maxCardValue && user.getSplitHandTotal2() > maxCardValue) {
+
+								playerTurn = false;
+
+							}
 
 						}
 						else {
@@ -582,6 +594,7 @@ int main()
 		}
 
 		//Program prompts the user for if they want to play another game
+		cout << "--------------------------------------------------" << endl;
 		cout << "Do you wish to play again? Enter y for yes or n for no: ";
 		char playerContinue;
 		cin >> playerContinue;

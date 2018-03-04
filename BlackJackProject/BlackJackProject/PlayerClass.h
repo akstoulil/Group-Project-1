@@ -286,14 +286,31 @@ public:
 				}
 
 				//Push back the card, add to the total, display the card info, set the drawn state to true, and end the loop
-				splitHands[pos].push_back(card);
 
-				card_total += card.getNumber();
-				arr[randomSuit][randomNumber].setState(true);
+				if (pos == 1) {
 
-				card.displayCardInfo();
+					splitHands[0].push_back(card);
+					arr[randomSuit][randomNumber].setState(true);
 
-				cardDrawn = true;
+					splitHandTotal1 += card.getNumber();
+					card.displayCardInfo();
+					cout << "Hand " << pos << " total: " << splitHandTotal1 << endl;
+
+					cardDrawn = true;
+
+				}
+				else if (pos == 2) {
+
+					splitHands[1].push_back(card);
+					arr[randomSuit][randomNumber].setState(true);
+
+					splitHandTotal2 += card.getNumber();
+					card.displayCardInfo();
+					cout << "Hand " << pos << " total: " << splitHandTotal2 << endl;
+
+					cardDrawn = true;
+
+				}
 
 			}
 		}
